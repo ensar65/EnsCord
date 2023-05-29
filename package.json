@@ -1,0 +1,29 @@
+{
+  "name": "mrcord",
+  "version": "1.0.0",
+  "description": "Powerful discord bot base.",
+  "main": "index.js",
+  "scripts": {
+    "run": "npx tsc && node dist/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minerosenw/MRCord.git"
+  },
+  "author": "minerosenw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minerosenw/MRCord/issues"
+  },
+  "homepage": "https://github.com/minerosenw/MRCord#readme",
+  "devDependencies": {
+    "@types/node": "^20.2.4",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
