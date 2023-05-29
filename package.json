@@ -4,7 +4,7 @@
   "description": "Powerful discord bot base.",
   "main": "index.js",
   "scripts": {
-    "run": "npx tsc && node dist/index"
+    "b-run": "npx tsc && node dist/index"
   },
   "repository": {
     "type": "git",
