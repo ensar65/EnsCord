@@ -1,12 +1,12 @@
 import {Collection} from "discord.js";
-import Command from "./src/commands/Command";
+import CommandInterface from "./src/libs/interfaces/CommandInterface";
 
 declare module NodeJS {
     interface Global {
-        commands : Collection<string, Command>
+        commands : Collection<string, CommandInterface>
     }
 }
 
 declare global {
-    var commands : Collection<string, Command>
+    var commands : Collection<string, CommandInterface>
 }
