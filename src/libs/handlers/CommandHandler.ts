@@ -29,7 +29,7 @@ export default class CommandHandler extends Handler {
                 let command_class = require(main_file_url).default;
                 let command_name = config.command.name;
 
-                commands.set(command_name, command_class);
+                commands.set(command_name, new command_class());
 
                 console.log("[CommandHandler] " + command_name + " successfully loaded.")
             });
