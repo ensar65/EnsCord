@@ -1,9 +1,16 @@
+import Command from "./commands/Command";
+
 require("dotenv").config();
 
+import CommandHandler from "./libs/handlers/CommandHandler";
 import EventHandler from "./libs/handlers/EventHandler";
-import {Client} from "discord.js";
+import {Client, Collection} from "discord.js";
 
 import AppLogin from "./libs/app/login"
+
+
+
+global.commands = new Collection<string, Command>();
 
 async function main() {
     try {
@@ -18,6 +25,9 @@ async function main() {
 
         const eventHandler = new EventHandler("events");
         await eventHandler.run(client);
+
+        const commandHandler = new CommandHandler("commands");
+        await commandHandler.run(client);
 
         return client;
     } catch (error) {
