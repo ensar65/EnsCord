@@ -31,9 +31,10 @@ export default class EventHandler extends Handler {
                     Event.onRun(data);
                 });
                 console.log("[EventHandler] Successfully initialized " + folder_data.name + ".")
-                return resolve(true);
             });
             console.log("[EventHandler] All events loaded.\n")
+            return resolve(true);
+
         });
 
     }
