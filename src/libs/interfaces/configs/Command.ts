@@ -1,5 +1,7 @@
+import {SlashCommandBuilder} from "discord.js";
+
 export default interface Command {
-    "command": object,
+    "command": SlashCommandBuilder,
     "commandType": string,
     "guildId": number,
     "main": string,
