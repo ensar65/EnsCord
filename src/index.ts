@@ -1,4 +1,4 @@
-import Command from "./commands/Command";
+import CommandInterface from "./libs/interfaces/CommandInterface";
 
 require("dotenv").config();
 
@@ -10,7 +10,7 @@ import AppLogin from "./libs/app/login"
 
 
 
-global.commands = new Collection<string, Command>();
+global.commands = new Collection<string, CommandInterface>();
 
 async function main() {
     try {
