@@ -1,5 +1,5 @@
-import {Interaction} from "discord.js";
+import {CommandInteraction} from "discord.js";
 
 export default interface CommandInterface {
-    onCommandSender(interaction: Interaction): void
+    onCommandSender(interaction: CommandInteraction): void
 }

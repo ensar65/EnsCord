@@ -30,7 +30,12 @@ export default class CommandHandler extends Handler {
                 let command_name = config.command.name;
 
                 commands.set(command_name, new command_class());
-
+                if (config.commandType == "client") {
+                    slash_commands.set("client", config.command);
+                } else if (config.commandType == "guild") {
+                    let guild_id = config.guildId;
+                    slash_commands.set(guild_id, config.command);
+                }
                 console.log("[CommandHandler] " + command_name + " successfully loaded.")
             });
             console.log("[CommandHandler] All commands loaded.\n")
