@@ -1,6 +1,6 @@
 import {Client, GatewayIntentBits} from 'discord.js';
-const {Guilds} = GatewayIntentBits;
-const client = new Client({intents: [Guilds]});
+const {Guilds, MessageContent, GuildMessages, GuildMembers} = GatewayIntentBits;
+const client = new Client({intents: [Guilds, GuildMessages, GuildMembers, MessageContent]});
 
 export default class AppLogin {
      private readonly _token: string;
