@@ -4,13 +4,15 @@ require("dotenv").config();
 
 import CommandHandler from "./libs/handlers/CommandHandler";
 import EventHandler from "./libs/handlers/EventHandler";
-import {Client, Collection} from "discord.js";
+import {Client, Collection, SlashCommandBuilder} from "discord.js";
 
 import AppLogin from "./libs/app/login"
+import SlashCommandPusher from "./libs/app/slashCommandPusher";
 
 
 
 global.commands = new Collection<string, CommandInterface>();
+global.slash_commands = new Collection<any, SlashCommandBuilder>()
 
 async function main() {
     try {
@@ -28,6 +30,9 @@ async function main() {
 
         const commandHandler = new CommandHandler("commands");
         await commandHandler.run(client);
+
+        const slashCommandHandler = new SlashCommandPusher();
+        await slashCommandHandler.run(<string>client.user?.id);
 
         return client;
     } catch (error) {
