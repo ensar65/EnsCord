@@ -37,6 +37,11 @@ configuration file named events/youreventname/config.ts.
     }
  ```
 
+After configuring, create the main file you specified in the configuration inside the src directory For example, create
+events/yourevent/src/index.ts.
+
+You can see example main file in ready event.
+
 # Data
 
 You need add your bot token in .env file.
