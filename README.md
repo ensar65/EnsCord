@@ -12,6 +12,7 @@ You need add your bot token in .env file.
 - [x] Auto Event handler.
 - [x] Auto Command Handler
 - [x] Auto put and refresh slash commands.
+- [ ] Commands reload without exiting process.
 - [ ] Automatic remove deleted commands.
 - [ ] Commands filtered by name and type (now just name)
 - [ ] Message command support.
