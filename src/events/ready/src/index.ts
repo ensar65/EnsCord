@@ -5,6 +5,5 @@ import {Client} from "discord.js";
 export default class Ready extends Event implements EventInterface {
     onRun(client: Client): void {
 
-        console.log(client.user?.username);
     }
 }
