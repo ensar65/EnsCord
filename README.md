@@ -9,5 +9,8 @@ and just ```npm run b-run```
 You need add your bot token in .env file.
 
 # TODO  
-- [ ] Automatic push slash command discord.
+- [x] Auto Event handler.
+- [x] Auto Command Handler
+- [ ] Auto put and refresh slash commands.
+- [ ] Message command support.
 
