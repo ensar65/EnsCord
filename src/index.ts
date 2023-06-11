@@ -12,7 +12,7 @@ import SlashCommandPusher from "./libs/app/slashCommandPusher";
 
 
 global.commands = new Collection<string, CommandInterface>();
-global.slash_commands = new Collection<any, SlashCommandBuilder>()
+global.slash_commands = new Collection<any, Array<SlashCommandBuilder>>()
 
 async function main() {
     try {

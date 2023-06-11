@@ -2,7 +2,7 @@ import Handler from "./Handler";
 
 import CommandConfig from "../../libs/interfaces/configs/Command"
 import Helpers from "../helpers";
-import {Client} from "discord.js";
+import {Client, SlashCommandBuilder} from "discord.js";
 
 
 export default class CommandHandler extends Handler {
@@ -31,10 +31,25 @@ export default class CommandHandler extends Handler {
 
                 commands.set(command_name, new command_class());
                 if (config.commandType == "client") {
-                    slash_commands.set("client", config.command);
+
+                    if (slash_commands.has("client")) {
+                        let client_commands = slash_commands.get("client")
+                        client_commands?.push(config.command);
+                        slash_commands.set("client", <SlashCommandBuilder[]> client_commands);
+                    } else {
+                        slash_commands.set("client", new Array<SlashCommandBuilder>(config.command))
+                    }
+
                 } else if (config.commandType == "guild") {
                     let guild_id = config.guildId;
-                    slash_commands.set(guild_id, config.command);
+                    if (slash_commands.has(guild_id)) {
+                        let client_commands = slash_commands.get(guild_id)
+                        client_commands?.push(config.command);
+                        slash_commands.set(guild_id, <SlashCommandBuilder[]> client_commands);
+                    } else {
+                        slash_commands.set(guild_id, new Array<SlashCommandBuilder>(config.command))
+                    }
+
                 }
                 console.log("[CommandHandler] " + command_name + " successfully loaded.")
             });
